@@ -2,11 +2,8 @@
 
 from __future__ import annotations
 
-import os
 import subprocess
-import sys
 import time
-from typing import Optional
 
 from .config import InfraConfig
 from .transport import encode_args
@@ -52,7 +49,7 @@ def launch_workers(cfg: InfraConfig, master_host: str, master_port: int, module:
             workdir = f"cd '{cfg.working_dir}' && " if cfg.working_dir else ""
             remote_cmd = f"{workdir}{export} {python} -m mpipy.worker"
             cmd = _ssh_prefix(cfg, host) + [remote_cmd]
-            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            subprocess.Popen(cmd)
             if cfg.progress_to_terminal:
                 print(f"[mpipy] launched rank {rank} on {host} (local {local_rank})")
             rank += 1

@@ -16,4 +16,7 @@ def test_edge_cases():
     assert is_prime(1) is False
     assert is_prime(-7) is False
 
+def test_large_primes():
+    assert is_prime(99993) is False
+
 #test

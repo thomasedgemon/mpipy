@@ -162,7 +162,7 @@ def raise_if_cancelled() -> None:
 
 
 def run(fn: Callable[..., Any], *args, **kwargs):
-    global _JOB_ACTIVE
+    global _JOB_ACTIVE, COMM_WORLD
     cfg = get_config()
     if cfg is None:
         raise ConfigError("configure_infra must be called before run")
@@ -186,7 +186,6 @@ def run(fn: Callable[..., Any], *args, **kwargs):
         result = fn(*args, **kwargs)
     finally:
         comm.barrier()
-        global COMM_WORLD
         COMM_WORLD = None
         clear_config()
         _CANCEL_EVENT.clear()

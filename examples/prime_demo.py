@@ -9,7 +9,7 @@ def main():
         master_node="192.168.0.1",
         per_node_cores=3,
         per_node_threads=6,
-        num_worker_nodes=3,
+        num_worker_nodes=2,
         hosts=["192.168.0.2", "192.168.0.3"],
         time_job=True,
         progress_to_terminal=True,

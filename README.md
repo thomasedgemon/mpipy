@@ -45,4 +45,6 @@ Cancellation is cooperative. Call `mpipy.cancel_job()` from the master process, 
 - Add `send/recv` tags and `source` matching in `Comm.recv`.
 - Add non-blocking operations and collectives.
 - Add better cluster failure detection and timeouts.
+- Add proper handling of floats
+- Add simpler job cancellation, preferably via terminal/cli.
 

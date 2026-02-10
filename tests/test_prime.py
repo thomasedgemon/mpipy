@@ -15,3 +15,5 @@ def test_edge_cases():
     assert is_prime(0) is False
     assert is_prime(1) is False
     assert is_prime(-7) is False
+
+#test

@@ -37,3 +37,7 @@ configure_infra = {
     master_node cannot be null
     per_node_cores cannot be null
     num_worker_nodes cannot be null
+
+let's start with prime checking using a segmented sieve. the user should be able to just
+call configure_infra with their params, and call a function like
+segmented_sieve(number), and then run the program.

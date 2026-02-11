@@ -1,4 +1,4 @@
-# mpipy (MVP)
+# mpipy
 
 This is a minimal, from-scratch MPI-style runtime in pure Python. It uses SSH for process launch and raw TCP sockets for message passing. The goal is to provide MPI-like terminology and a simple, human-readable configuration while staying small enough to extend quickly.
 
@@ -8,6 +8,7 @@ This is a minimal, from-scratch MPI-style runtime in pure Python. It uses SSH fo
 - Python is installed on every node and available via the same executable name.
 - The master node is reachable from workers on the TCP port chosen at runtime.
 - All nodes are of identical specs (core/thread count, RAM size, etc)
+
 ## Quick Usage (In Script)
 ```python
 from mpipy import configure_infra
@@ -44,6 +45,13 @@ restrictions in order to distribute the work as evenly as possible.
 
 ## Cancellation
 Cancellation is cooperative. Call `mpipy.cancel_job()` from the master process, and ensure long-running code periodically checks `mpipy.cancel_requested()` (or `mpipy.raise_if_cancelled()`) to exit early.
+
+## Additional Requirements
+Numpy
+
+
+## Notes
+It is suggested to use at most (total cores - 1) on a node, to leave room for OS processes, etc. 
 
 ## Next Steps
 - Add `send/recv` tags and `source` matching in `Comm.recv`.

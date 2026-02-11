@@ -64,3 +64,5 @@ It is suggested to use at most (total cores - 1) on a node, to leave room for OS
 - Add simpler job cancellation, preferably via terminal/cli.
 - Add video transcoding, chunk-based compression, AES encryption, neural net training, numerical differentiation, high-dimensional numerical integration, PDE solving support. 
 
+## Ongoing
+- Ensure cross-node communication is at a bare minimum. 

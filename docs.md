@@ -1,6 +1,6 @@
-# mpipy Calculations API
+# Documentation
 
-This document describes the pure-Python MPI-style calculation helpers in `mpipy`, based on:
+This document describes the functions in `mpipy`, based on:
 - `src/mpipy/matmul.py`
 - `src/mpipy/prime.py`
 - `src/mpipy/monte_carlo.py`

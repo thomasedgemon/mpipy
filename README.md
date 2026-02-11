@@ -40,7 +40,7 @@ print(monte_carlo(10000, sample_fn, eval_fn))
 - The ability to naively calcuate primality of an integer via brute force up to sqrt(n), skipping even numbers. The library automatically splits up the range (1-sqrt(n)) evenly across all specified worker nodes. 
 - The ability to distribute matrix multiplication via 2d block decomposition without square grid
 restrictions in order to distribute the work as evenly as possible. 
-- The ability to distribute generic Monte Carlo support with customizable reducers for estimators.
+- The ability to distribute generic Monte Carlo calculations with customizable reducers for estimators.
 - Job lock: only one job can run at a time. 
 
 

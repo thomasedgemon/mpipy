@@ -14,6 +14,7 @@ This is a minimal, from-scratch MPI-style runtime in pure Python. It uses SSH fo
 from mpipy import configure_infra
 from mpipy.prime import is_prime
 from mpipy.matmul import mat_mul
+from mpipy.monte_carlo import monte_carlo
 
 configure_infra(
     master_node="headnode",
@@ -30,11 +31,13 @@ configure_infra(
 
 print(is_prime(999983))
 print(mat_mul(a,b)) #where a and b are type np.array
+print(monte_carlo(10000, sample_fn, eval_fn))
 ```
 ## Current Features
 - The ability to naively calcuate primality of an int via brute force up to sqrt(n),     skipping even numbers. The library automatically splits up the range (1-sqrt(n)) evenly across all specified worker nodes. 
 - The ability to distribute matrix multiplication via 2d block decomposition without square grid
 restrictions in order to distribute the work as evenly as possible. 
+- Generic Monte Carlo support with customizable reducers for estimators.
 - Job lock: only one job can run at a time. 
 
 
@@ -59,4 +62,5 @@ It is suggested to use at most (total cores - 1) on a node, to leave room for OS
 - Add better cluster failure detection and timeouts.
 - Add proper handling of floats
 - Add simpler job cancellation, preferably via terminal/cli.
+- Add video transcoding, chunk-based compression, AES encryption, neural net training, numerical differentiation, high-dimensional numerical integration, PDE solving support. 
 

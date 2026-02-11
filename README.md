@@ -72,4 +72,7 @@ It is suggested to use at most (total cores - 1) on a node, to leave room for OS
 - Ensure cross-node communication is at a bare minimum. 
 
 ## Contributing
-- docs do not currently exist for contributing, nor does any kind of license. Please feel free to contribute if you find this library and its usecase interesting, compelling, or worthwhile. 
+- Please feel free to contribute if you find this library and its usecase interesting, compelling, or worthwhile. 
+
+## Disclaimer, of sorts. 
+-This is my first foray into building a python library. As such, GPT Codex gave me outlines for overall structure, library requirements (presence of a .toml, etc), verification of math, and boilerplate things like unit tests. 

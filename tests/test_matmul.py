@@ -2,7 +2,6 @@
 
 import numpy as np
 import pytest
-
 from mpipy.matmul import mat_mul
 
 

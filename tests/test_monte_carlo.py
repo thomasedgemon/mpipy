@@ -1,7 +1,6 @@
+"""Basic unit tests for monte carlo."""
 import random
-
 from mpipy.monte_carlo import MonteCarloResult, monte_carlo
-
 
 def sample_uniform(rng: random.Random) -> float:
     return rng.random()

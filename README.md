@@ -28,9 +28,11 @@ configure_infra(
     python_executable="python",
     working_dir="/shared/yourproject",
 )
+a = # m x n matrix as np.array
+b = # n x e matrix as np.array 
 
 print(is_prime(999983))
-print(mat_mul(a,b)) #where a and b are type np.array
+print(mat_mul(a,b))
 print(monte_carlo(10000, sample_fn, eval_fn))
 ```
 ## Current Features

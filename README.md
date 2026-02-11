@@ -12,6 +12,7 @@ This is a minimal, from-scratch MPI-style runtime in pure Python. It uses SSH fo
 ```python
 from mpipy import configure_infra
 from mpipy.prime import is_prime
+from mpipy.matmul import mat_mul
 
 configure_infra(
     master_node="headnode",
@@ -27,14 +28,17 @@ configure_infra(
 )
 
 print(is_prime(999983))
+print(mat_mul(a,b)) #where a and b are type np.array
 ```
 ## Current Features
-- The ability to calcuate primality of an int via brute force up to sqrt(n)
+- The ability to naively calcuate primality of an int via brute force up to sqrt(n),     skipping even numbers. The library automatically splits up the range (1-sqrt(n)) evenly across all specified worker nodes. 
+- The ability to distribute matrix multiplication via 2d block decomposition without square grid
+restrictions in order to distribute the work as evenly as possible. 
 - Job lock: only one job can run at a time. 
 
 
 ## Current Limitations
-- Centralized routing: all messages flow through rank 0.
+- Centralized routing: all messages flow through rank 0 (the master node).
 - No non-blocking ops, no derived datatypes, no fault tolerance.
 - Security is minimal (raw TCP); rely on cluster network isolation.
 

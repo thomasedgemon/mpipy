@@ -61,6 +61,7 @@ It is suggested to use at most (total cores - 1) on a node, to leave room for OS
 
 ## Next Steps
 - Primality testing needs to end if a rank finds a divisor while the other ranks are still searching.
+- Fine-tune config for a true beowulf cluster, where machines are of varying specs.
 - Add `send/recv` tags and `source` matching in `Comm.recv`.
 - Add non-blocking operations and collectives.
 - Add better cluster failure detection and timeouts.

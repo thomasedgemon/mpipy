@@ -1,6 +1,7 @@
 # mpipy
+Some time ago, I built a beowulf cluster with four worker nodes and a master node out of sff desktops. It was a lot of fun. I tried both python and cpp MPI libraries, but I felt like they were too complicated for someone who is not already at least of intermediate MPI skill. 
 
-This is a minimal, from-scratch MPI-style runtime in pure Python. It uses SSH for process launch and raw TCP sockets for message passing. The goal is to provide MPI-like terminology and a simple, human-readable configuration while staying small enough to extend quickly.
+This is a minimal, MPI runtime in pure Python. It uses SSH for process launch and raw TCP sockets for message passing. The goal is to utilitize the MPI spec with simple, human-readable configuration. That is to say, backend complexity in exchange for ux simplicity.
 
 ## Assumptions
 - All nodes can SSH to each other or at least to workers from the master.
@@ -9,7 +10,7 @@ This is a minimal, from-scratch MPI-style runtime in pure Python. It uses SSH fo
 - The master node is reachable from workers on the TCP port chosen at runtime.
 - All nodes are of identical specs (core/thread count, RAM size, etc)
 
-## Quick Usage (In Script)
+## Usage
 ```python
 from mpipy import configure_infra
 from mpipy.prime import is_prime

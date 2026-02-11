@@ -1,5 +1,5 @@
 # mpipy
-Some time ago, I built a beowulf cluster with four worker nodes and a master node out of sff desktops. It was a lot of fun. I tried both python and cpp MPI libraries, but I felt like they were too complicated for someone who is not already at least of intermediate MPI skill. 
+Some time ago, I built a beowulf cluster with four worker nodes and a master node out of sff desktops. It was a lot of fun. I tried both python and Golang MPI libraries, but I felt like they were too complicated for someone who is not already at least of intermediate MPI skill. 
 
 This is a minimal, MPI runtime in pure Python. It uses SSH for process launch and raw TCP sockets for message passing. The goal is to utilitize the MPI spec with simple, human-readable configuration. That is to say, backend complexity in exchange for ux simplicity.
 

@@ -10,11 +10,10 @@ from typing import Iterable, List, Optional
 class InfraConfig:
     master_node: str
     per_node_cores: int
-    per_node_threads: Optional[int]
+    per_node_threads: Optional[int] #rm this 
     num_worker_nodes: int
     time_job: bool = False
     progress_to_terminal: bool = False
-
     hosts: List[str] = field(default_factory=list)
     hostfile: Optional[str] = None
     ssh_user: Optional[str] = None

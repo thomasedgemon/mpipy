@@ -5,6 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Iterable, List, Optional
 
+#we instantiate the class as InfraConfig, take in and validate user inputs via 'def configure_infra()'
+#and then we use that data to build and instance of the InfraConfig class in 'cfg'
+
 
 @dataclass
 class InfraConfig:
@@ -38,7 +41,7 @@ def _read_hostfile(path: str) -> List[str]:
             hosts.append(line)
     return hosts
 
-#user-inputted data is validated here and put in an instance of InfraConfig
+#user-inputted data is validated here and put in an instance of InfraConfig (cfg mentioned later)
 def configure_infra(
     *,
     master_node: str,
@@ -55,7 +58,7 @@ def configure_infra(
     python_executable: str = "python",
     working_dir: Optional[str] = None,
     connect_timeout_s: float = 10.0,
-) -> InfraConfig:
+    ) -> InfraConfig:
     """Configure cluster/runtime settings.
 
     This is intentionally human-readable and favors explicit configuration.
